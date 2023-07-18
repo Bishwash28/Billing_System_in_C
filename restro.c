@@ -104,9 +104,12 @@ int main()
             printf("\t\tTotal\t= %f\n", c.it[i].Total);
             printf("\t\t---------------------\n");
             GrossTotal += c.it[i].Total;
-            while (getchar() != '\n')
-                ;
+            while (getchar() != '\n');
         }
+        break;
+    case 2:
+        printf("Thank you!!");
+        exit(1);
         break;
 
     default:
