@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
+//Defining structure 
 struct items
 {
     char itemsName[30];
@@ -12,6 +14,7 @@ struct customer
     char name[50], address[60], date[30];
     struct items it[60];
 };
+
 // create function for the layout of bill
 void formatlayout(char date[30], char Name[50], char Address[30])
 {
@@ -23,12 +26,10 @@ void formatlayout(char date[30], char Name[50], char Address[30])
     printf("\nAddress:%s ", Address);
     printf("\t=========================================================\n");
     printf("\tItems\t\t Qty\t\tPrice\t\tTotal");
-    // printf("Qty\t\t");
-    // printf("Price\t\t");
-    // printf("Total");
     printf("\n\t=========================================================");
     printf("\n");
 }
+
 void datalayout(char items[30], float quantity, float price, float Total)
 {
     printf("\n\t%s\t", items);
@@ -37,6 +38,7 @@ void datalayout(char items[30], float quantity, float price, float Total)
     printf("\t%.2f\t", Total);
     printf("\n\n");
 }
+
 void discountcalculation(float GrossTotal)
 {
     printf("\n");
@@ -53,6 +55,7 @@ void discountcalculation(float GrossTotal)
     printf("\n\t===========================================================\n");
     printf("\tGrand-Total :\t\t\t\t\t%.2f", grandtotal);
 }
+
 int main()
 {
     struct customer c;
@@ -65,11 +68,11 @@ int main()
     printf("please slect the perfered operation\n\n");
     printf("1.General Invoice\n");
     printf("2.Exit");
-
     printf("\nYour choice:\t");
     scanf("%d", &opt);
     fgetc(stdin);
 
+    //Switch statement
     switch (opt)
     {
     case 1:
