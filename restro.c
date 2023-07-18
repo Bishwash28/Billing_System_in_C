@@ -19,11 +19,13 @@ struct customer
 void formatlayout(char date[30], char Name[50], char Address[30])
 {
     printf("\n\n");
+    printf("\t*********************************************************\n\n");
+    printf("\t\t=========================================\n");
     printf("\t\t\tFaith the supreme restro\t\t\t\n");
     printf("\t\t==========================================\n");
     printf("\n\t\t\t\t\tDate:%s ", date);
-    printf("\n Name:%s ", Name);
-    printf("\nAddress:%s ", Address);
+    printf("\n \tName : %s ", Name);
+    printf("\n \tAddress : %s ", Address);
     printf("\t=========================================================\n");
     printf("\tItems\t\t Qty\t\tPrice\t\tTotal");
     printf("\n\t=========================================================");
@@ -49,11 +51,13 @@ void discountcalculation(float GrossTotal)
     printf("\tGross-Total:\t\t\t\t\t%.2f", GrossTotal);
     printf("\n\t---------------------------------------------------------\n");
     printf("\tDiscont @ 10%s:\t\t\t\t\t-%.2f ", "%", dis);
-    printf("\n\t\t\t\t\t\t\t------------\n");
+    printf("\n\t\t\t\t\t\t\t---------\n");
     printf("\tNet-Total :\t\t\t\t\t%.2f", nettotal);
-    printf("\n\t VAT @ 13%s:\t\t\t\t\t+%.2f", "%", tax);
-    printf("\n\t===========================================================\n");
+    printf("\n\tVAT @ 13%s :\t\t\t\t\t+%.2f", "%", tax);
+    printf("\n\t==========================================================\n");
     printf("\tGrand-Total :\t\t\t\t\t%.2f", grandtotal);
+    printf("\n\t==========================================================\n");
+    printf("\n\t\t  *** Thanks For Visiting Us ***\n\n\n"); //just for buttom design
 }
 
 int main()
@@ -65,11 +69,12 @@ int main()
     printf("\t\t\tFaith the supreme restro\t\t\t\n");
     printf("\t\t==========================================\n");
     printf("\n\n");
-    printf("please slect the perfered operation\n\n");
+    printf("* Please slect the perfered operation:\n\n");
     printf("1.General Invoice\n");
     printf("2.Exit");
-    printf("\nYour choice:\t");
+    printf("\n\nYour choice:\t");
     scanf("%d", &opt);
+    printf("\n\n");
     fgetc(stdin);
 
     //Switch statement
@@ -77,25 +82,25 @@ int main()
     {
     case 1:
         strcpy(c.date, __DATE__);
-        printf("Enter the name of the customer: ");
+        printf(" Name of the customer: ");
         fgets(c.name, sizeof(c.name), stdin);
 
-        printf("Enter the address: ");
+        printf(" Address             : ");
         fgets(c.address, sizeof(c.address), stdin);
 
-        printf("Enter the number of items ordered: ");
+        printf(" No. of items ordered: ");
         scanf("%d%*c", &c.items);
         printf("\t\t==========================================\n");
 
         for (int i = 0; i < c.items; i++)
         {
-            printf("Enter the item number %d: ", i + 1);
+            printf(" Name of item no. %d: ", i + 1);
             fgets(c.it[i].itemsName, sizeof(c.it[i].itemsName), stdin);
 
-            printf("enter the quantity:");
+            printf(" Quantity          : ");
             scanf("%f", &c.it[i].quantity);
 
-            printf("Enter the price as per:");
+            printf(" Price as per      : ");
             scanf("%f", &c.it[i].price);
 
             c.it[i].Total = c.it[i].quantity * c.it[i].price;
